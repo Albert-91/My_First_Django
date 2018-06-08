@@ -1,5 +1,5 @@
-from exercises.models import Band, Category, Article, Album
-from random import randint, choice
+from exercises.models import Band, Category, Article, Album, Person, Position
+from random import randint, choice, random
 
 
 def null_year():
@@ -67,4 +67,18 @@ def filter_4():
 def show_albums(band):
     albums = Album.objects.filter(year__range=(1970, 1979)).filter(name__contains="The")
 
+
+def fill_person():
+    person = Person.objects.all()
+    names = ['Wolverine', 'Spiderman', 'Ironman', 'Hulk', 'Dr. Strange']
+    for i in range(len(names)):
+        person.create(name=names[i])
+
+
+def fill_position():
+    position = Position.objects.all()
+    position_names = ['soldier', 'hero', 'student', 'scientist', 'doctor']
+    salaries = [2500.1, 5000.0, 2412.44, 6593.3, 9987.12]
+    for i in range(len(position_names)):
+        position.create(position_name=position_names[i], salary=salaries[i], person_id=i+1)
 

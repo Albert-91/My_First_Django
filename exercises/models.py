@@ -64,4 +64,11 @@ class Song(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
 
 
+class Person(models.Model):
+    name = models.CharField(max_length=128)
 
+
+class Position(models.Model):
+    position_name = models.CharField(max_length=128)
+    salary = models.DecimalField(decimal_places=2, max_digits=7)
+    person = models.OneToOneField(Person, on_delete=models.CASCADE)
