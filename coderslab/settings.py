@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'exercises',
     'homework',
-
+    'football',
 ]
 
 MIDDLEWARE = [
@@ -79,6 +79,13 @@ WSGI_APPLICATION = 'coderslab.wsgi.application'
 DATABASES = {
     'default': {
         'NAME': 'django_4',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'USER': 'postgres',
+        'PASSWORD': 'coderslab',
+        'HOST': 'localhost'
+    },
+    'football': {
+        'NAME': 'football',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'USER': 'postgres',
         'PASSWORD': 'coderslab',
